@@ -2,6 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const user = require("./routes/user"); //new addition
 const InitiateMongoServer = require("./config/db");
+const cors = require("cors");
+
+// middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 // Initiate Mongo Server
 InitiateMongoServer();
